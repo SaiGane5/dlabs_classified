@@ -86,7 +86,7 @@ def indexgenerator(indexPath, documentsPath):
         index = load_index_from_storage(storage_context,service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0),embed_model=embed_model))
     return index
 
-indexPath = '/Indices/dlabs-indices'
+indexPath = '/IndicesClassified/dlabs-indices'
 documentsPath = ''
 index = indexgenerator(indexPath, documentsPath)
 service_context = ServiceContext.from_defaults(llm=llm, embed_model=embed_model)
