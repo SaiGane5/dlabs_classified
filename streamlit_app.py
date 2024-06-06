@@ -29,9 +29,9 @@ import openai
 import nest_asyncio
 
 # Set custom NLTK data directory
-nltk_data_dir = '/home/adminuser/nltk_data'
-os.makedirs(nltk_data_dir, exist_ok=True)
-os.environ['NLTK_DATA'] = nltk_data_dir
+# nltk_data_dir = '/home/adminuser/nltk_data'
+# os.makedirs(nltk_data_dir, exist_ok=True)
+# os.environ['NLTK_DATA'] = nltk_data_dir
 
 nest_asyncio.apply()
 
@@ -89,7 +89,7 @@ def indexgenerator(indexPath, documentsPath):
         index = load_index_from_storage(storage_context, service_context=ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0), embed_model=embed_model))
     return index
 
-indexPath = '/IndicesClassified/dlabs-indices'
+indexPath = f"/IndicesClassified/dlabs-indices"
 documentsPath = ''
 index = indexgenerator(indexPath, documentsPath)
 service_context = ServiceContext.from_defaults(llm=llm, embed_model=embed_model)
